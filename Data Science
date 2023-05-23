@@ -1,0 +1,18 @@
+<< To generate the desired plot from the
+"titanic_train" dataset in R>>
+library (ggplot2)
+library (dplyr)
+# Load the titanic train dataset
+data (titanic_train)
+# Calculate the count of survivors by
+passenger class
+survivors <- titanic train %>%
+group by (Pclass) %>%
+summarize (Count = sum(Survived == 1))
+# Plot the survivorship by passenger class
+ggplot (survivors, aes (x = Polass, y =
+Count)) +
+geom_bar (stat = "identity", fill = "blue")
++
+labs (x = "Passenger Class", Y = "Count"
+title = "Survivorship by Passenger CLass"),
